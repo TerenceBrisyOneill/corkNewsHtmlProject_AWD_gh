@@ -1,0 +1,580 @@
+@media screen and (max-width:100em){
+	/*TERENCE ONEILL/CIT ID: R00130228 / ASSIGNMENT2 AWD*/
+	body{
+		background:#000;
+		padding:0px;
+		margin:0px;
+	}
+	/*-------------------MAIN MENU---------------------*/
+	/*main menu elements styled by tag*/
+	nav ul li{
+		cursor:pointer;
+		list-style-type:none;
+		position:absolute;
+		font-size:1em;
+		top:0px;
+		left:0px;
+		width:102px;
+		height:27px;
+		background:#000;
+		color:#fff;
+		border:1px solid #fff;
+		text-align:center;
+		line-height:150%;
+		box-sizing:border-box;
+	}
+	/*Z-index higher for menu element as its on top*/
+	/*main menu elements positioned/styled by ID*/
+	#menu1{z-index:100;}
+	#animationMenu1,#newsMenu1,#usersMenu1{z-index:10;}
+
+	#animationMenu1,#newsMenu1,#usersMenu1{
+		background-color:rgba(255,0,0,0.6); /*normal state = 0.6 level of transparency*/
+		color:#fff;
+	}
+	#animationMenu1:hover,#newsMenu1:hover,#usersMenu1:hover{
+		background-color:rgba(255,0,0,1); /*fully opaque on hover*/
+	}
+	/*SHOWS A DEFAULT STATE OF ANCHORS TEXT COLOR*/
+	ul li a:link,ul li a:active,ul li a:visited {
+		color:#fff;
+		text-decoration:none;/*no underline*/
+	}
+	/*'.open and .closed' - These are classes that are triggered by JScript function, which
+	is the onclick function called for the opening and closing of the main menu*/
+	ul.closed li,ul.open li:nth-child(2),ul.open li:nth-child(3),ul.open li:nth-child(4) {
+		top:0px;
+		left:0px;
+		-webkit-transition:0.1s ease-out;
+		-moz-transition:0.1s ease-out;
+		-o-transition:0.1s ease-out;
+		/*transition:0.1s ease-out;*/ /*W3C validator didn't recognize this value*/
+	}
+	ul.open li:nth-child(2){
+		left:102px;
+	}
+	ul.open li:nth-child(3){
+		top:27px;
+	}
+	ul.open li:nth-child(4){
+		left:102px;
+		top:27px;
+	}
+	ul li:nth-child(2)>a,ul li:nth-child(3)>a,ul li:nth-child(4)>a{
+		display:block;
+	}
+	/*----------------------MAIN MENU END--------------------*/
+	
+	/*---------------ANIMATIONS PAGE CONTAINER DIV---------------*/
+	#calendarDiv{
+		clear:both;
+		z-index:10;
+		margin:50px auto;
+		width:530px;
+	}
+	/*MAIN TITLE FOR ANIMATIONS PAGE*/
+	#calendarDiv h1{
+		color:#fff;
+		font-size:2.5em;
+		margin:10px auto;
+		text-align:center;
+	}
+	/*XMAS TREE MADE FROM LI ELEMENTS */
+	#calendar li {
+		cursor:pointer;
+		float:left;
+		position:relative;
+		list-style-type:none;
+		position:relative;
+		height:75px;
+		width:75px;
+		background:blue;
+		margin:2px;
+		overflow:hidden;
+	}
+	/*STATIC XMAS TREE CELL DOOR*/
+	.door{
+		position:absolute;
+		top:0px;
+		left:0px;
+		height:75px;
+		width:75px;
+		background:green;
+		-webkit-transition:0.1s ease-out;
+		-moz-transition:0.1s ease-out;
+		-o-transition:0.1s ease-out;
+		/*transition:0.1s ease-out;*/ /*W3C validator non-recognition*/
+		text-align:center;
+		color:#fff;
+		font-size:1.6em;
+		font-weight:bold;
+		line-height:320%;/*not sure about text centering vertiocally with this */
+	}
+	/*SLIDING XMAS TREE CELL DOOR ON HOVER*/
+	#calendar li:hover .door{
+		left:75px;
+	}
+
+	/*TOASTER ANIMATION:*/
+	/*NOTE FOR GARY COUSE: CSS VALIDATOR PICKING OUT ERRORS IN ANIMATIONS LINE 117-147 */
+	#calendar>li:nth-child(3n+1){
+		background:url(images/toaster-sprite.gif)left center;
+		animation: flyToaster .2s steps(4)infinite;
+	}
+	@keyframes flyToaster{
+		100% {background-position:-300px;}
+	}
+
+	/*WALKING MAN ANIMATION:*/
+	#calendar>li:nth-child(3n+2){
+		background:url(images/walk-left.png)left center;
+		animation: walkMan .7s steps(6)infinite;
+	}
+	@keyframes walkMan{
+		100% {background-position:-450px;}
+	}
+
+	/*LANDSCAPE ANIMATION:*/
+	#calendar>li:nth-child(3n+3){
+		background:url(images/landscape-pan.jpg)left center;
+		animation: landscape 25s infinite;
+	}
+	@keyframes landscape{
+		100% {background-position:-300px;}
+	}
+
+	/*FIRE ANIMATION:*/
+	#calendar>li:nth-child(1){
+		background:url(images/sprite3.jpg)left center;
+		animation: playFire .9s steps(32)infinite;
+	}
+	@keyframes playFire{
+		100% {background-position:-2376px;}
+	}
+	/*LI CELL # 25
+	REMOVING THE TOASTER
+	and set background for cell 25 to blue
+	*/
+	#calendar>li:nth-child(25){
+		background:#00f;
+	}
+	/*CELL 25 ANIMATION-SCROLLING TEXT*/
+	.scroller{
+		position:relative;
+		left:0px; /*max -370px*/
+		color:#fff;
+		width:420px;
+		font-size:2em;
+		font-weight:800;
+		line-height:240%;
+		animation: movingText 10s infinite; /*NOTE FOR GARY COUSE: CSS VALIDATOR PICKING OUT ERRORS IN ANIMATIONS LINE 166*/
+	}
+	@keyframes movingText{
+		0%{left:0px;}
+		49% {left:-370px;}
+		100% {left:0px;}
+	}
+	/*POSITIONING AND STYLING OF ALL THE XMAS TREE LI ELEMENTS*/
+	#calendar>li:nth-child(even)>div:nth-child(1){
+		background:red;
+	}
+	#calendar>li:nth-child(25)>div:nth-child(2){
+		background:gold;
+	}
+	#calendar>li:nth-child(2),#calendar>li:nth-child(4),#calendar>li:nth-child(7),#calendar>li:nth-child(11),#calendar>li:nth-child(16),#calendar>li:nth-child(22),#calendar>li:nth-child(23){
+		clear:left;
+	}
+	#calendar>li:nth-child(1){
+		margin-left:187.5px;
+	}
+	#calendar>li:nth-child(2){
+		margin-left:150px;
+	}
+	#calendar>li:nth-child(4){
+		margin-left:112.5px;
+	}
+	#calendar>li:nth-child(7){
+		margin-left:75px;
+	}
+	#calendar>li:nth-child(11){
+		margin-left:39.5px;
+	}
+	#calendar>li:nth-child(22){
+		margin-left:197.5px;
+	}
+	#calendar>li:nth-child(23){
+		margin-left:118.5px;
+	}
+	/*----------------------END ANIMATIONS PAGE UP TO 1400PX-------------------------*/
+
+	/*--------------------------CORK NEWS PAGE-----------------------------*/
+	/*3 DIVS FOR PAGE CONTENT*/
+	#headerH1,#container,#socialIconCont{
+		background:#fff;
+		position:relative;
+		margin:60px auto 0px;
+		width:90%;
+		max-width:1000px;
+	}
+	/*CREATED SEPARATE DIV FOR TITLE*/
+	 #headerH1{
+		background:#000;
+		text-align:left;
+		color:#fff;
+	 }
+	 #headerH1 h1{
+		color:#fff;
+		font-size:2.8em;
+		font-weight:900;
+	}
+	/*CREATED SEPARATE DIV FOR SOC ICONS*/
+	 #socialIconCont{
+		 margin:0px auto 10px;
+		 height:70px;
+	 }
+	 /*ALLOWS NEWS IMAGE CONTAINERS TO POSITION CORRECTLY*/
+	#container nav,#container ul{
+		margin:0;
+		padding:0;
+	}
+	/*NEWS ELEMENTS CONTAINER*/
+	#container li{
+		position:relative;
+		display:block;
+		border:none;
+		text-align:left;
+	}
+	/*NEWS ELEMENT TITLE*/
+	#container li h2{
+		margin-left:15px;
+		font-size:1.8em;
+		font-weight:800;
+		font-style:normal;
+	}
+	/*STYLE FOR ABSOLUTE POSITIONED DIV IN RIGHT CORNER OF NEWS LI ELEMENT*/
+	.daysOld{
+		position:absolute;
+		right:0;
+		bottom:0;
+		width:100px;
+		height:30px;
+		color:#000;
+		background-color:rgba(255,255,255,0.6);
+		text-align:center;
+		-webkit-border-top-left-radius:10px;
+		-moz-border-top-left-radius:10px;
+		border-top-left-radius:10px;
+		z-index:10;
+		cursor:default;
+	}
+	/*COMMON ATTRIBUTES FOR NEWS DIVS*/
+	#localNews,#gigs,#jobs{
+		width:33.33333333%;
+		height:200px;
+		color:#fff;
+		background:url(images/emcBuilding.jpg);
+		background-size:cover;
+		background-position: 50% 50%;
+		float:left;
+	}
+	/*COMMON ATTRIBUTES FOR IMAGES*/
+	#localNewsCover,#gigsCover,#jobsCover{
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:200px;
+		background-color:rgba(255,0,0,0.8);
+	}
+	#localNewsCover:hover{
+		background-color:rgba(255,0,0,0.4);
+	}
+	#localNewsCover:hover>h2{
+		font-style:italic;
+	}
+	/*GIGS MENU STYLES*/
+	#gigs{
+		background:url(images/jazzFestival.jpg);
+		background-size:cover;
+		background-position: 50% 50%;
+	}
+	#gigsCover{
+		background-color:rgba(0,255,0,0.8);	
+	}
+	#gigsCover:hover{
+		background-color:rgba(0,255,0,0.4);
+	}
+	#gigsCover:hover>h2{
+		font-style:italic;
+	}
+	/*JOBS MENU STYLES*/
+	#jobs{
+		background:url(images/workforceTalent.jpg);
+		background-size:cover;
+		background-position: 50% 50%;
+	}
+	#jobsCover{
+		background-color:rgba(0,0,255,0.8);	
+	}
+	#jobsCover:hover{
+		background-color:rgba(0,0,255,0.4);
+	}
+	#jobsCover:hover>h2{
+		font-style:italic;
+	}
+	/*THE BOTTOM TEXT PART OF NEWS AREA*/
+	#headArticle{
+		padding:10px 20px 0px;
+		width:auto;
+		min-height:200px;
+		color:#000;
+		background:#fff;
+		-webkit-column-count: 3;
+		-moz-column-count: 3; 
+		column-count: 3;
+		-webkit-column-gap: 30px; 
+		-moz-column-gap: 30px; 
+		column-gap: 30px;
+		 -webkit-column-rule: 1px solid #aaa; 
+		-moz-column-rule: 1px solid #aaa; 
+		column-rule: 1px solid #aaa;
+	}
+	#headArticle h3{
+		font-size:1.4em;
+		font-weight:400;
+		-webkit-column-span:all;/*NOT SUPPORETD IN FIREFOX*/
+		-moz-column-span:all;
+		column-span:all;
+	}
+	/*SOCIAL ICON CONAINER*/
+	#socialIcons{
+		width:190px;
+		height:70px;
+		float:right;
+		margin-right:10px;
+	}
+	/*NORMAL STATE OF SOCIAL IMAGES*/
+	#socialIcons img{
+		opacity:0.4;
+		-webkit-transition: 0.5s ease-out;
+		-moz-transition:0.5s ease-out;
+		-o-transition:0.5s ease-out;
+	}
+	/*HOVER STATE OF SOCIAL IMAGES*/
+	#socialIcons img:hover{
+		opacity:0.8;
+	}
+	/*---------------------------END CORK NEWS--------------------------*/
+	
+	/*-------------------------USERS PAGE BEGIN-------------------------*/
+	.data{
+		color:#000;
+		margin:2px auto 1px;
+		text-align:center;
+		font-weight:800;
+	}
+	#container1{
+		background:#fff;
+		position:relative;
+		margin:70px auto 0px;
+		width:99%;
+		-webkit-border-radius:15px;
+		-moz-border-radius:15px;
+		border-radius:15px; /*W3C validator = parse error*/
+		max-width:1400px;
+		padding-bottom:30px;
+	}
+	#container1 h1 {
+		text-align:center;
+		font-size:2.2em;
+		font-weight:900;
+	}
+	#users{
+		display:inline-block;
+		text-align:center;
+		width:95%;
+		height:auto;
+	}
+	#users li {
+		width:250px;
+		height:250px;
+		-webkit-border-radius:125px;
+		-moz-border-radius:125px;
+		border-radius:125px; /*W3C validator = parse error*/
+		background:#ddd;
+		margin:0px auto;
+		-webkit-box-shadow:4px 4px 6px #000;
+		-moz-box-shadow:4px 4px 6px #000;
+		box-shadow:4px 4px 6px #000;
+		list-style-type:none;
+		display:inline-block;
+		/*text-align:right;*/
+	}
+	#users li img {
+		display:block;
+		margin:0px auto;
+		width:200px;
+		height:200px;
+		-webkit-border-radius:100px;
+		-moz-border-radius:100px;
+		border-radius:100px; /*W3C validator = parse error*/
+	}
+	/*-------------------------USERS END----------------------------*/
+}
+@media screen and (max-width:45em){
+	
+	/*-----------------------CORK NEWS UP TO 45EM----------------------*/
+
+	/*LOCAL NEWS MENU STYLES*/
+	#localNews{
+		width:100%;
+	}
+	/*GIGS MENU STYLES*/
+	#gigs{
+		width:50%;
+	}
+	/*JOBS MENU STYLES*/
+	#jobs{
+		width:50%;
+	}
+	/*THE BOTTOM TEXT PART OF NEWS AREA*/
+	#headArticle{
+		-webkit-column-count: 2;
+		-moz-column-count: 2; 
+		column-count: 2;
+		-webkit-column-gap: 20px; 
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+	}
+	/*------------------------END CORK NEWS-------------------------*/
+	
+}
+@media screen and (max-width:30em){
+	
+	/*------------------------MENU UP TO 30EMS-------------------------*/
+	nav ul li{
+		position:static;
+		margin-left:-20px;
+		width:70px;
+		height:60px;
+		border:none;
+	}
+	
+	#menu1{
+		color:rgba(0,0,0,0.0); /*REMOVES MENU TEXT*/
+		background-color:rgba(255,0,0,1);
+		background:url(images/menuIcon.png)#ff0000 no-repeat right;
+		background-position:17px 14px;
+	}
+	/*COLOR OF MENU DROP DOWN ITEMS NORMAL AND ON HOVER*/
+	#animationMenu1,#newsMenu1,#usersMenu1{
+	background-color:rgba(255,0,0,1);
+	}
+	#animationMenu1:hover,#newsMenu1:hover,#usersMenu1:hover{
+	background-color:rgba(255,100,0,1.0);
+	}
+	
+	/*INITIAL MENU POSITIONING OF ANIM, NEWS AND USERS*/
+	ul li:nth-child(2),ul li:nth-child(3),ul li:nth-child(4){
+		display:none;
+	}
+	
+	ul.open li:nth-child(2),ul.open li:nth-child(3),ul.open li:nth-child(4){
+		display:inline-block;
+		width:100%;
+		border-bottom:1px solid #000;
+		font-size:1.2em;
+		font-weight:800;
+		line-height:50px;
+	}
+	/*---------------------------END MENU-----------------------------*/
+
+	/*------------------------BEGIN ANIMATIONS PAGE UP TO 30EMS----------------------*/
+	#calendarDiv{
+		margin:20px auto;
+		width:100%;
+	}
+	#calendar>li:nth-child(2),#calendar>li:nth-child(4),#calendar>li:nth-child(7),#calendar>li:nth-child(11),#calendar>li:nth-child(16),#calendar>li:nth-child(22),#calendar>li:nth-child(23){
+		clear:none;
+	}
+	#calendar>li:nth-child(1){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(2){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(4){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(7){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(11){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(22){
+		margin-left:2px;
+	}
+	#calendar>li:nth-child(23){
+		margin-left:2px;
+	}
+	/*----------------------END ANIMATIONS-------------------*/
+
+	/*----------------------BEGIN CORK NEWS UP TO 30EMS------------*/
+	#container{
+		width:100%;
+	}
+	#socialIconCont {
+		width:100%;
+		margin-bottom:0;
+	}
+	/*ALLOWS LI NEWS ELEMENTS TO POSITION CORRECTLY*/
+	#container li{
+		margin:0px;
+		padding:0px;
+	}
+	#localNews{
+		float:none;
+	}
+	#gigs{
+		width:100%;
+		float:none;
+	}
+	#jobs{
+		width:100%;
+		float:none;
+	}
+	#headArticle{
+		width:auto;
+		-webkit-column-count:1;
+		-moz-column-count:1;
+		column-count:1;
+	}
+	#headArticle div{
+		margin:10px 15px 35px;
+	}
+	#socialIcons{
+		float:right;
+	}
+
+	/*---------------------------END CORK NEWS---------------------------*/
+	
+	/*-------------------------USERS UP TO 30EMS------------------------*/
+	#users{
+		width:85%;
+	}
+	#users li {
+		width:85%;
+		-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+		margin:5px auto;
+	}
+	#users li img{
+		-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+		margin-top:5px;
+	}
+	/*--------------------------USERS END-------------------------------*/
+}

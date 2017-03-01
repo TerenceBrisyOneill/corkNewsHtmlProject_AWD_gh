@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--TERENCE ONEILL/CIT ID: R00130228 / ASSIGNMENT2 AWD-->
+		<title>Cork News Page</title>
+		<meta charset="UTF-8"/>
+		<link href="main.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript">
+		function hideMenu() {
+			document.getElementById("mainMenu").className = "closed";
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+
+		function showMenu(){
+			document.getElementById("mainMenu").className = "open";
+			document.getElementById('mainMenu').onclick = hideMenu;
+
+		}
+		function init() {
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+		window.onload = init;
+		</script>
+	</head>
+	<body>
+		<nav>
+			<ul id="mainMenu">
+				<li id="menu1">Menu</li>
+				<li id="animationMenu1"><a href="animation.html">Animation</a></li>
+				<li id="newsMenu1"><a href="index.html">News</a></li>
+				<li id="usersMenu1"><a href="users.html">Users</a></li>
+			</ul>
+		</nav>
+		<div id="headerH1"><h1>Cork News</h1></div>
+		<div id="container">
+			<nav>
+				<ul>
+					<li id="localNews">
+						<a href="#">
+							<div id="localNewsCover"><h2>Local News</h2></div>
+						</a>
+						<div class="daysOld">4 days old</div>
+					</li>
+					<li id="gigs">
+						<a href="#">
+							<div id="gigsCover"><h2>Gigs</h2></div>
+						</a>
+						<div class="daysOld">2 days old</div>
+					</li>
+					<li id="jobs">
+						<a href="#">
+							<div id="jobsCover"><h2>Jobs</h2></div>
+						</a>
+						<div class="daysOld">2 days old</div>
+					</li>
+				</ul>
+			</nav>
+			
+			<div id="headArticle">
+				<div>
+					<h3>Head</h3>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+					tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
+					nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+					Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel 
+					illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim 
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+					tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
+					nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+					Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel 
+					illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim 
+				</div>
+			</div>
+			
+		</div>
+		<div id="socialIconCont">
+			<div id="socialIcons">
+				<a href="http://www.facebook.com"><img src="images/facebook.png" alt="facebook image"></a>
+				<a href="http://www.twitter.com"><img src="images/twitter.png" alt="twitter image"></a>
+				<a href="http://www.googleplus.com"><img src="images/google.png" alt="google image"></a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--TERENCE ONEILL/CIT ID: R00130228 / ASSIGNMENT2 AWD-->
+		<title>Animation Page</title>
+		<meta charset="UTF-8"/>
+		<link href="main.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript">
+		function hideMenu() {
+			document.getElementById("mainMenu").className = "closed";
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+
+		function showMenu(){
+			document.getElementById("mainMenu").className = "open";
+			document.getElementById('mainMenu').onclick = hideMenu;
+
+		}
+		function init() {
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+		window.onload = init;
+		</script>
+	</head>
+	<body>
+		<nav>
+			<ul id="mainMenu">
+				<li id="menu1">Menu</li>
+				<li id="animationMenu1"><a href="animation.html">Animation</a></li>
+				<li id="newsMenu1"><a href="index.html">News</a></li>
+				<li id="usersMenu1"><a href="users.html">Users</a></li>
+			</ul>
+		</nav>
+		<div id="calendarDiv">
+			<h1>SOME CSS ANIMATIONS</h1>
+			<ul id = "calendar">
+			<li> <div class = "door">1</div> </li>
+			<li> <div class = "door">2</div> </li>
+			<li> <div class = "door">3</div> </li>
+			<li> <div class = "door">4</div> </li>
+			<li> <div class = "door">5</div> </li>
+			<li> <div class = "door">6</div> </li>
+			<li> <div class = "door">7</div> </li>
+			<li> <div class = "door">8</div> </li>
+			<li> <div class = "door">9</div> </li>
+			<li> <div class = "door">10</div> </li>
+			<li> <div class = "door">11</div> </li>
+			<li> <div class = "door">12</div> </li>
+			<li> <div class = "door">13</div> </li>
+			<li> <div class = "door">14</div> </li>
+			<li> <div class = "door">15</div> </li>
+			<li> <div class = "door">16</div> </li>
+			<li> <div class = "door">17</div> </li>
+			<li> <div class = "door">18</div> </li>
+			<li> <div class = "door">19</div> </li>
+			<li> <div class = "door">20</div> </li>
+			<li> <div class = "door">21</div> </li>
+			<li> <div class = "door">22</div> </li>
+			<li> <div class = "door">23</div> </li>
+			<li> <div class = "door">24</div> </li>
+			<li> <div class = "scroller">Happy 25th of December Day!</div>
+			<div class = "door">25</div> </li>
+			</ul>
+		</div>
+	</body>
+</html>

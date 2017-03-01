@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--TERENCE ONEILL/CIT ID: R00130228 / ASSIGNMENT2 AWD-->
+		<title>User Profile Page</title>
+		<meta charset="UTF-8"/>
+		<link href="main.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript">
+		function hideMenu() {
+			document.getElementById("mainMenu").className = "closed";
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+
+		function showMenu(){
+			document.getElementById("mainMenu").className = "open";
+			document.getElementById('mainMenu').onclick = hideMenu;
+
+		}
+		function init() {
+			document.getElementById('mainMenu').onclick = showMenu;
+		}
+		window.onload = init;
+		</script>
+	</head>
+	<body>
+		<nav>
+			<ul id="mainMenu">
+				<li id="menu1">Menu</li>
+				<li id="animationMenu1"><a href="animation.html">Animation</a></li>
+				<li id="newsMenu1"><a href="index.html">News</a></li>
+				<li id="usersMenu1"><a href="users.html">Users</a></li>
+			</ul>
+		</nav>
+		<div id="container1">
+			<h1>Users</h1>
+			<ul id = "users">
+				
+				<li>
+					<img  src = "images/twistyFace.jpg">
+					<div class  = "data">Mr. Twisty Face</div>
+				</li>
+				
+				
+				<li>	
+					<img  src = "images/smileyJoe.jpg"> 
+					<div class  = "data">Smiley Joe</div>
+				
+				</li>
+				
+				
+				<li>
+					<img src = "images/mrFrog.png">
+					<div class  = "data">Mr. Frog</div>
+				</li>
+				
+				
+				
+				<li>
+					<img  src = "images/lucyLu.jpg">
+					<div class  = "data">Lucy Lu</div>
+				</li>
+				 
+				 
+				<li>
+					<img  src = "images/frizzyDizzy.jpg">
+					<div class  = "data">Frizzy Dizzy</div>
+				</li>
+
+			</ul>
+		</div>
+		<div><a href="http://cliparts.co/cartoon-faces-pictures">Thanks to Cliparts.co for face images</div>
+	</body>
+</html>
